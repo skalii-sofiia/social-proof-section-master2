@@ -143,7 +143,7 @@ main{
 
 /*media*/
 
-@media (max-width: 950px) {
+@media (max-width: 1045px) {
 body {
     background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
     }
