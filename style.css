@@ -1,0 +1,203 @@
+:root {
+    --very-dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 82%, 42%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);   
+}
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+}
+body {
+    font-family: 'League Spartan', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("./images/bg-pattern-top-desktop.svg"), url("images/bg-pattern-bottom-desktop.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+}
+main{
+    width: 75%;
+    margin: 0 auto;
+    padding-block: 20px;
+}
+.firstblock-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4em;
+}
+.text1{
+    width: 30%;
+}
+.text1-h1{
+    color: var(--very-dark-magenta);
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 40px;
+}
+.text1-p{
+    color: var(--dark-grayish-magenta);
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 25px;
+}
+.rates{
+    display: grid;
+    row-gap: 15px;
+    grid-template-areas:
+    "first first first first first first first . ."
+    ". second second second second second second second ."
+    ". . third third third third third third third";
+}
+#firstline{
+    grid-area: first;
+}
+#secondline{
+    grid-area: second;
+}
+#thirdline{
+    grid-area: third;
+}
+.rates_rate {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+    background-color: var(--light-grayish-magenta);
+    border-radius: 8px;
+    padding: 15px 60px 16px 35px;
+    column-gap: 30px;
+    font-weight: 700;
+    color:var(--very-dark-magenta);
+}
+.secondblock-wrap{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+}
+.person{
+    background-color: var(--very-dark-magenta);
+    padding: 40px;
+    border-radius: 8px;
+    height:fit-content;
+}
+.person_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.person_info_img{
+    border-radius: 50%;
+    width: 45px;
+    aspect-ratio: 1;
+}
+.person_info_text{
+    margin-left: 20px;
+}
+.person_info_name, .person_text{
+    color: var(--white);
+}
+.person_info_name{
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.person_info_job{
+    color: var(--soft-pink);
+    font-weight: 500;
+}
+.person_text{
+    font-weight: 400;
+    line-height: 25px;
+}
+.person:last-child{
+    margin-top: 40px;
+}
+.person:nth-last-child(2){
+    margin-top: 20px;
+}
+
+/*media*/
+
+@media (max-width: 950px) {
+body {
+    background-image: url("images/bg-pattern-top-mobile.svg"), url("images/bg-pattern-bottom-mobile.svg");
+    }
+.firstblock-wrap{
+    flex-flow:column wrap;
+    margin-bottom: 3em;
+}
+.text1{
+    width: 100%;
+    text-align: center;
+    margin: 40px 0;
+}
+.text1-p{
+    font-size: 15px;
+}
+.rates{
+    grid-template-areas:
+    "first"
+    "second"
+    "third";
+    width: 100%;
+}
+.rates_rate {
+    flex-flow: column nowrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+}
+.rates_text{
+    text-align: center;
+}
+.images{
+    align-self: center;
+}
+.secondblock-wrap{
+    grid-template-columns: repeat(1, 1fr);
+}
+.person:last-child{
+    margin-top: 20px;
+}
+.attribution{
+    margin-top: 10px;
+}
+}
+
+@media (max-width: 450px) {
+.text1-h1{
+    font-size: 1.9em;
+}
+.person {
+    padding: 25px;
+}
+.person_text{
+    font-size: 15px;
+}
+}
